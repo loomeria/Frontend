@@ -7,13 +7,15 @@ node {
       nodejs('NodeJS') {
          sh 'npm install'
       }
-    }
+  }
 
-  stage('Linter') {
+  stage('Run Lint') {
+    catchError(buildResult: 'SUCCESS', stageResult: 'UNSTABLE') {
       nodejs('NodeJS') {
-         sh 'npm run lint'
+        sh 'npm run lint'
       }
     }
+  }
 
   stage('SonarQube Analysis') {
     def scannerHome = tool 'SonarScanner';

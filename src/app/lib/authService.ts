@@ -60,7 +60,8 @@ export const authenticateUser = async ({ username, password }: { username: strin
       body: JSON.stringify({
         "username": username,
         "password": password
-      })
+      }),
+      credentials: 'include'
     });
 
     if (response.ok) {

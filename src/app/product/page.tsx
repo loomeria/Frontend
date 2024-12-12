@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import React from 'react';
 
 const products = [
@@ -13,7 +14,8 @@ export default async function Page({
       page?: string;
     };
   }) {
-
+    const authorization = (await headers()).getSetCookie()
+    console.log("my authorisation====================================",authorization)
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Product List</h1>

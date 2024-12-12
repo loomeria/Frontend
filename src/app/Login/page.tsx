@@ -8,6 +8,7 @@ export default function Page() {
         authenticate,
         undefined,
       );
+      
   return (
     <div className="min-h-lvh flex items-center justify-center w-full">
       <div className="bg-white dark:bg-gray-900 shadow-md rounded-lg px-8 py-6 max-w-md">

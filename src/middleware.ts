@@ -9,13 +9,9 @@ export default async function middleware(req: NextRequest) {
   const isProtectedRoute = protectedRoutes.includes(path);
   const isPublicRoute = publicRoutes.includes(path);
 
-  console.log('Path:', path);
-  console.log('isProtectedRoute:', isProtectedRoute);
-  console.log('isPublicRoute:', isPublicRoute);
 
   // Lire le cookie "token"
   const tokenEncript = req.cookies.get('token')?.value || null;
-  console.log('Encrypted Token:', tokenEncript);
 
   let token: string | null = null;
 
@@ -30,13 +26,11 @@ export default async function middleware(req: NextRequest) {
 
   // Rediriger vers /login si non authentifié
   if (isProtectedRoute && !token) {
-    console.log('User not authenticated, redirecting to /login');
     return NextResponse.redirect(new URL('/login', req.url));
   }
 
   // Rediriger vers /product si authentifié
   if (isPublicRoute && token && !req.nextUrl.pathname.startsWith('/product')) {
-    console.log('User authenticated, redirecting to /product');
     return NextResponse.redirect(new URL('/product', req.url));
   }
 

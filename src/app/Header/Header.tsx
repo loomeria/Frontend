@@ -72,7 +72,7 @@ const Header = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0 transform hover:scale-105 transition-transform duration-200">
                         <Link href="/" className="text-2xl font-bold text-green-300">
-                            P'tits Créateurs
+                            Loomeria
                         </Link>
                     </div>
 

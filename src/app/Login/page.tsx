@@ -1,5 +1,3 @@
-import LoginForm from "@/app/Composant/formLogin";
-
 export default function Page() {
 
     return(

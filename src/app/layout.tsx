@@ -28,9 +28,9 @@ export default function RootLayout({
     <body
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <div className="flex h-screen flex-col">
+      <div className="flex h-screen flex-col bg-white">
         {/* Header reste en haut */}
-        <div className="flex-none">
+        <div className="flex-none w-4/5 mx-auto">
           <Header />
         </div>
         {/* Children occupe tout l'espace restant */}

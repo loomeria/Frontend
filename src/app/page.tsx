@@ -1,26 +1,44 @@
-import Carousel from "@/app/Composant/Carousel";
+import AppPromo from "./Component/AppPromo";
+import Hero from "./Component/Hero";
+import Pricing from "./Component/Pricing";
+import Values from "./Component/Values";
+import WhyChoose from "./Component/WhyChoose";
+import WhySell from "./Component/WhySell";
 
 export default function Home() {
-
   return (
-    <div className="bg-white pb-20 font-[family-name:var(--font-geist-sans)] flex flex-col min-h-screen">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div className="flex h-96 gap-8 w-full pl-20 pr-20">
-          <div className="w-2/3 bg-gray-100 hover:shadow-2xl p-4 rounded-lg transition-shadow duration-300 flex justify-end items-end">
-            <button className=" absolute rounded-xl py-2 px-4 text-black bg-green-200 hover:shadow-xl transition-shadow duration-300">Visiter la boutique</button>
-
-          </div>
-          <div className="w-1/3 bg-gray-100 hover:shadow-2xl p-4 rounded-lg transition-shadow duration-300"/>
-        </div>
-
-        <div className="flex h-96 gap-8 w-full lg:w-full pl-20 pr-20">
-          <div className="w-1/3 bg-gray-100 hover:shadow-2xl p-4 rounded-lg transition-shadow duration-300"/>
-          <div className="w-2/3 bg-gray-100 hover:shadow-2xl p-4 rounded-lg transition-shadow duration-300"/>
-        </div>
-        <h1 className="text-2xl pl-20 text-black">Les dernières boutiques</h1>
-          <Carousel></Carousel>
-      </main>
-      <div className="flex-grow-0"></div>
+    <div className="bg-white max-w-7xl mx-auto  flex flex-col min-h-screen">
+      <Hero />
+      <Values />
+      <WhyChoose />
+      <WhySell />
+      <Pricing />
+      <AppPromo />
     </div>
+    // <div className="bg-white flex flex-col min-h-screen">
+    //   <div className="flex flex-1 items-center justify-between p-8">
+    //     <div className="max-w-lg">
+    //       <h1 className="text-4xl font-bold text-gray-800 mb-4">
+    //         Le savoir-faire à portée de main
+    //       </h1>
+    //       <p className="text-gray-600 mb-6">
+    //         Loomeria vous connecte directement avec des petits commerçants
+    //         passionnés qui offrent des vêtements et accessoires uniques.
+    //         Explorez une sélection variée, des pièces artisanales aux créations
+    //         modernes, toutes accessibles en quelques clics.
+    //       </p>
+    //       <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+    //         Je télécharge l’application gratuitement
+    //       </button>
+    //     </div>
+    //     <div className="flex-shrink-0">
+    //       <img
+    //         src="/iphone-15-pro.png"
+    //         alt="Illustration"
+    //         className="w-96 h-auto rounded-lg shadow-lg"
+    //       />
+    //     </div>
+    //   </div>
+    // </div>
   );
 }

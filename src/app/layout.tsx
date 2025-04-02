@@ -1,37 +1,27 @@
 import "./globals.css";
-
-// components/Layout.tsx
-import React, { ReactNode } from 'react';
-import Head from 'next/head';
 import Header from './Component/Header';
 import Footer from './Component/Footer';
+import { Metadata } from 'next';
 
-interface LayoutProps {
-  children: ReactNode;
-  title?: string;
-}
+export const metadata: Metadata = {
+  title: 'Loomeria - Le savoir-faire à portée de main',
+  description: 'Plateforme de vente pour artisans et commerçants locaux',
+};
 
-export default function Layout({ children, title = 'Loomeria' }: LayoutProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-
     <html lang="en">
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-    </head>
-    <body>
-    <div className="font-sans  mx-auto bg-white">
-      <Head>
-        <title>{title} - Le savoir-faire à portée de main</title>
-        <meta name="description" content="Plateforme de vente pour artisans et commerçants locaux" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
-    </body>
+      <body>
+        <div className="font-sans mx-auto bg-white">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
+      </body>
     </html>
-
   );
 }
